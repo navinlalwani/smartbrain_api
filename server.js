@@ -2,7 +2,10 @@ const express = require('express');
 const cors = require('cors');
 const knex = require('knex');
 const bcrypt = require('bcrypt-nodejs');
-const clarifai = require('clarifai')
+const clarifai = require('clarifai');
+const { Client } = require('pg');
+
+
 
 const clarifaiapp = new Clarifai.App({
  apiKey: 'fd5c3b4ffc544a6da693022f51181a9c'
@@ -15,10 +18,8 @@ app.use(cors());
 const pgdb = knex({
   client: 'pg',
   connection: {
-    host : '127.0.0.1',
-    user : '',
-    password : '',
-    database : 'smartbrain'
+    connectionString : process.env.DATABASE_URL,
+   	ssl: true
   }
 });
 
