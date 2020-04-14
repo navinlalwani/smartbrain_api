@@ -22,7 +22,7 @@ const pgdb = knex({
   }
 });
 
-
+app.get ('/', (req,res) => {res.send("its working !!")})
 app.post('/signin', (req,res) => {
 	pgdb.select('email','hash').from('login').where('email', '=', req.body.email)
 	.then(data => {
