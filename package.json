@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js" //add nodemon server.js to make sure it runs while development. Removed for production.
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
